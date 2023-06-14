@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <div class="flex cursor-pointer relative">
+      <!-- slide bar  -->
+      <div class="w-2/12 ">
+        <div class=" fixed w-2/12 ">
+          <div
+            class="text-2xl font-bold h-24 flex justify-center items-center text-white bg-gradient-to-r from-[rgb(227,73,141)] to-[rgb(168,88,173)]"
+          >
+            Here's Logo
+          </div>
+          <!-- Menu  -->
+          <div
+            class="text-gray-500 font-semibold text-xl flex flex-col gap-10 py-10 pl-5"
+          >
+            <p
+              class="flex text-[rgb(230,72,138)] border-r-4 border-[rgb(230,72,138)] items-center py-3 px-5 gap-10"
+            >
+              <i class="fa-solid fa-chart-pie"></i><span>Dashboard</span>
+            </p>
+            <p
+              class="flex items-center py-3 hover:text-[rgb(230,72,138)] hover:border-r-4 hover:border-[rgb(230,72,138)] transition duration-300 px-5 gap-10"
+            >
+              <i class="fa-solid fa-user"></i><span>Customer</span>
+            </p>
+            <p
+              class="flex items-center py-3 hover:text-[rgb(230,72,138)] hover:border-r-4 hover:border-[rgb(230,72,138)] transition duration-300 px-5 gap-10"
+            >
+              <i class="fa-solid fa-ticket"></i><span>Sale</span>
+            </p>
+            <p
+              class="flex items-center py-3 hover:text-[rgb(230,72,138)] hover:border-r-4 hover:border-[rgb(230,72,138)] transition duration-300 px-5 gap-10"
+            >
+              <i class="fa-solid fa-money-check-dollar"></i><span>Payment</span>
+            </p>
+            <p
+              class="flex items-center py-3 hover:text-[rgb(230,72,138)] hover:border-r-4 hover:border-[rgb(230,72,138)] transition duration-300 px-5 gap-10"
+            >
+              <i class="fa-solid fa-users"></i><span>Supplier</span>
+            </p>
+            <p
+              class="flex items-center py-3 hover:text-[rgb(230,72,138)] hover:border-r-4 hover:border-[rgb(230,72,138)] transition duration-300 px-5 gap-10"
+            >
+              <i class="fa-solid fa-money-bill-1-wave"></i><span>Purchase</span>
+            </p>
+            <p
+              class="flex items-center py-3 hover:text-[rgb(230,72,138)] hover:border-r-4 hover:border-[rgb(230,72,138)] transition duration-300 px-5 gap-10"
+            >
+              <i class="fa-solid fa-arrow-rotate-left"></i>Return
+            </p>
+            <p
+              class="flex items-center py-3 hover:text-[rgb(230,72,138)] hover:border-r-4 hover:border-[rgb(230,72,138)] transition duration-300 px-5 gap-10"
+            >
+              <i class="fa-regular fa-user"></i><span>Admin</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right side  -->
+      <div class="w-10/12 h-[150vh] bg-zinc-200">
+        <!-- NavBar -->
+        <div class="flex justify-between bg-white px-5 py-4 shadow-xl">
+          <div class="text-[rgb(230,72,138)] text-3xl">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+
+          <div class="flex gap-5 text-lg items-center">
+            <i class="fa-solid fa-gear"></i>
+            <i class="fa-solid fa-bell"></i>
+            <img
+              class="w-10 h-10 rounded-full"
+              src="https://i.pinimg.com/736x/98/69/d4/9869d4ea2d00c8e16768a08dc46baca2.jpg"
+              alt=""
+            />
+          </div>
+        </div>
+
+        <!-- top -->
+        <div class="flex my-10 mx-14">
+          <!-- left table chart  -->
+          <div class="bg-white w-8/12 mx-5 rounded-2xl">
+            <!-- top text and chart  -->
+            <div class="flex">
+              <!-- left text  -->
+              <div
+                class="w-2/6 flex items-start ml-10 gap-5 py-5 my-5 flex-col"
+              >
+                <div>
+                  <p class="text-2xl font-bold">Dashboard</p>
+                  <span class="text-sm text-gray-500"
+                    >Overview of Last Month</span
+                  >
+                </div>
+                <div>
+                  <p class="text-2xl font-bold">$3252.125</p>
+                  <span class="text-sm text-gray-500"
+                    >Current month earing</span
+                  >
+                </div>
+                <div>
+                  <p class="text-2xl font-bold">90</p>
+                  <span class="text-sm text-gray-500">Current month sales</span>
+                </div>
+                <button
+                  class="text-white font-bold bg-[rgb(227,73,141)] py-3 px-5 rounded-2xl"
+                >
+                  Last Month Summary
+                </button>
+              </div>
+
+              <!-- right chart  -->
+              <div class="w-4/6" id="chart"></div>
+            </div>
+
+            <!-- bottom icon  -->
+            <div
+              class="border-t font-bold py-5 flex justify-around items-center"
+            >
+              <div class="flex items-center gap-3">
+                <div
+                  class="bg-[rgb(231,73,133)] text-white text-2xl w-14 h-14 flex justify-center items-center rounded-full"
+                >
+                  <i class="fa-solid fa-crown"></i>
+                </div>
+                <div>
+                  <p class="text-gray-500">Wallet Balance</p>
+                  <span>$1253</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="bg-[rgb(83,191,240)] text-white text-2xl w-14 h-14 flex justify-center items-center rounded-full"
+                >
+                  <i class="fa-solid fa-crown"></i>
+                </div>
+                <div>
+                  <p class="text-gray-500">Incomes</p>
+                  <span>$1253</span>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <div
+                  class="bg-[rgb(255,171,62)] text-white text-2xl w-14 h-14 flex justify-center items-center rounded-full"
+                >
+                  <i class="fa-solid fa-crown"></i>
+                </div>
+                <div>
+                  <p class="text-gray-500">Outcomes</p>
+                  <span>$1253</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- right pie chart  -->
+          <div class="bg-white w-4/12 mx-5 rounded-2xl px-10 py-5">
+            <p class="font-bold text-xl">Traffic</p>
+            <!-- Chart and Count -->
+            <div class="flex flex-col items-center gap-10">
+              <!-- Chart  -->
+              <div class="w-56 h-56">
+                <canvas id="myChart"></canvas>
+              </div>
+
+              <!-- suggest text  -->
+              <div class="flex flex-col gap-5">
+                <div class="flex gap-5 text-lg font-bold">
+                  <div class="text-[rgb(231,73,133)] gap-2 flex items-center">
+                    <span
+                      class="rounded-full w-3 h-3 bg-[rgb(231,73,133)]"
+                    ></span>
+                    <p>Earing</p>
+                  </div>
+                  <span>$120.12</span>
+                </div>
+                <div class="flex gap-5 text-lg font-bold">
+                  <div class="text-[rgb(83,191,240)] gap-2 flex items-center">
+                    <span
+                      class="rounded-full w-3 h-3 bg-[rgb(83,191,240)]"
+                    ></span>
+                    <p>Income</p>
+                  </div>
+                  <span>$120.12</span>
+                </div>
+                <div class="flex gap-5 text-lg font-bold">
+                  <div class="text-[rgb(255,171,62)] gap-2 flex items-center">
+                    <span
+                      class="rounded-full w-3 h-3 bg-[rgb(255,171,62)]"
+                    ></span>
+                    <p>Earing</p>
+                  </div>
+                  <span>$120.12</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- mid  -->
+        <div class="flex text-white my-10 mx-14">
+          <div
+            class="w-4/12 bg-gradient-to-r from-[rgb(229,74,135)] to-[rgb(185,85,161)] rounded-2xl mx-5"
+          >
+            <div class="flex justify-around px-5 py-4">
+              <div class="flex flex-col items-center w-7/12">
+                <p class="text-lg font-bold">Estimate Sales</p>
+                <div id="myChart1" class=" "></div>
+              </div>
+              <div class="w-5/12 flex flex-col items-center justify-center">
+                <p class="font-bold text-2xl">$453</p>
+                <span class="font-normal text-md">Jan 5 - July 21</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-4/12 bg-gradient-to-r from-[rgb(72,196,243)] to-[rgb(98,154,209)] rounded-2xl mx-5"
+          >
+            <div class="flex justify-around items-center px-5 py-4">
+              <div class="w-5/12 flex flex-col items-center justify-center">
+                <p class="text-lg font-bold mb-10">Bonus Rate</p>
+                <p class="font-bold text-2xl">$453</p>
+                <span class="font-normal text-md">Jan 5 - July 21</span>
+              </div>
+              <div class="flex flex-col items-center w-7/12">
+                <div id="myChart2" class=" "></div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="w-4/12 bg-gradient-to-r from-[rgb(252,181,41)] to-[rgb(245,133,85)] rounded-2xl mx-5"
+          >
+            <div class="flex justify-around px-5 py-4">
+              <div class="flex flex-col items-center w-7/12">
+                <p class="text-lg font-bold">Revenue Status</p>
+                <div id="myChart3" class=" "></div>
+              </div>
+              <div class="w-5/12 flex flex-col items-center justify-center">
+                <p class="font-bold text-2xl">$453</p>
+                <span class="font-normal text-md">Jan 5 - July 21</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- bottom  -->
+        <div class="flex my-10 mx-14">
+          <!-- left side  -->
+          <div
+            class="bg-white flex flex-col gap-10 w-4/12 rounded-2xl px-5 py-3 mx-5"
+          >
+            <p class="font-bold text-lg">Recent Activity</p>
+            <div class="flex justify-around items-center">
+              <p class="text-gray-500">45 Mins Ago</p>
+              <div class="flex-flex-col justify-center items-center">
+                <div
+                  class="bg-[rgb(231,73,133)] text-white text-2xl w-14 h-14 flex justify-center items-center rounded-full"
+                >
+                  <i class="fa-solid fa-bolt"></i>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-lg">Task Updated</p>
+                <div class="flex gap-5">
+                  <p class="font-bold">Jhon</p>
+                  <span class="text-gray-500">Updated A Task</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-around items-center">
+              <p class="text-gray-500">45 Mins Ago</p>
+              <div
+                class="bg-[rgb(83,191,240)] text-white text-2xl w-14 h-14 flex justify-center items-center rounded-full"
+              >
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-lg">Task Updated</p>
+                <div class="flex gap-5">
+                  <p class="font-bold">Jhon</p>
+                  <span class="text-gray-500">Updated A Task</span>
+                </div>
+              </div>
+            </div>
+            <div class="flex justify-around items-center">
+              <p class="text-gray-500">45 Mins Ago</p>
+              <div
+                class="bg-[rgb(255,171,62)] text-white text-2xl w-14 h-14 flex justify-center items-center rounded-full"
+              >
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div class="flex flex-col">
+                <p class="text-lg">Task Updated</p>
+                <div class="flex gap-5">
+                  <p class="font-bold">Jhon</p>
+                  <span class="text-gray-500">Updated A Task</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- right side  -->
+          <div class="bg-white w-8/12 rounded-2xl px-5 py-3 mx-5">
+            <div class="mb-5 flex justify-between items-center">
+              <p class="font-bold text-lg">Order Status</p>
+              <div class="flex items-center gap-3">
+                <input
+                  class="bg-slate-200 rounded-lg py-2 px-3"
+                  placeholder="Search"
+                  type="text"
+                  name=""
+                  id=""
+                />
+                <div class="bg-gray-200 rounded-xl text-pink-500 px-4 py-2">
+                  <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+              </div>
+            </div>
+            <div>
+              <table class="w-full">
+                <thead class="bg-black">
+                  <tr>
+                    <th class="text-white px-4 py-2">Invoice</th>
+                    <th class="text-white px-4 py-2">Customer</th>
+                    <th class="text-white px-4 py-2">From</th>
+                    <th class="text-white px-4 py-2">Price</th>
+                    <th class="text-white px-4 py-2">Process</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="font-semibold">
+                    <td class="px-4 text-center py-2">1242CC</td>
+                    <td class="px-4 text-center py-2">Jhon Doe</td>
+                    <td class="px-4 text-center py-2">Italy</td>
+                    <td class="px-4 text-center py-2">$152</td>
+                    <td class="px-4 text-center py-2">
+                      <span class="text-white bg-red-500 py-1 px-4 rounded-xl"
+                        >Process</span
+                      >
+                    </td>
+                  </tr>
+                  <tr class="font-semibold">
+                    <td class="px-4 text-center py-2">1242CC</td>
+                    <td class="px-4 text-center py-2">Jhon Doe</td>
+                    <td class="px-4 text-center py-2">Italy</td>
+                    <td class="px-4 text-center py-2">$152</td>
+                    <td class="px-4 text-center py-2">
+                      <span class="text-white bg-red-500 py-1 px-4 rounded-xl"
+                        >Process</span
+                      >
+                    </td>
+                  </tr>
+                  <tr class="font-semibold">
+                    <td class="px-4 text-center py-2">1242CC</td>
+                    <td class="px-4 text-center py-2">Jhon Doe</td>
+                    <td class="px-4 text-center py-2">Italy</td>
+                    <td class="px-4 text-center py-2">$152</td>
+                    <td class="px-4 text-center py-2">
+                      <span class="text-white bg-green-500 py-1 px-4 rounded-xl"
+                        >Success</span
+                      >
+                    </td>
+                  </tr>
+                  <tr class="font-semibold">
+                    <td class="px-4 text-center py-2">1242CC</td>
+                    <td class="px-4 text-center py-2">Jhon Doe</td>
+                    <td class="px-4 text-center py-2">Italy</td>
+                    <td class="px-4 text-center py-2">$152</td>
+                    <td class="px-4 text-center py-2">
+                      <span class="text-white bg-sky-500 py-1 px-4 rounded-xl"
+                        >On Hold</span
+                      >
+                    </td>
+                  </tr>
+                  <tr class="font-semibold">
+                    <td class="px-4 text-center py-2">1242CC</td>
+                    <td class="px-4 text-center py-2">Jhon Doe</td>
+                    <td class="px-4 text-center py-2">Italy</td>
+                    <td class="px-4 text-center py-2">$152</td>
+                    <td class="px-4 text-center py-2">
+                      <span class="text-white bg-red-500 py-1 px-4 rounded-xl"
+                        >Process</span
+                      >
+                    </td>
+                  </tr>
+                  <tr class="font-semibold">
+                    <td class="px-4 text-center py-2">1242CC</td>
+                    <td class="px-4 text-center py-2">Jhon Doe</td>
+                    <td class="px-4 text-center py-2">Italy</td>
+                    <td class="px-4 text-center py-2">$152</td>
+                    <td class="px-4 text-center py-2">
+                      <span
+                        class="text-white bg-yellow-500 py-1 px-4 rounded-xl"
+                        >Process</span
+                      >
+                    </td>
+                  </tr>
+
+                  <!-- Add more rows as needed -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/30d3a1ccfb.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  <script src="./app.js"></script>
+</html>
